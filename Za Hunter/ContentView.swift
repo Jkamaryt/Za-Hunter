@@ -19,7 +19,7 @@ struct ContentView: View {
             latitudeDelta: 0.05,
             longitudeDelta: 0.05)
     )
-    @State private var places = [Place]() // explain mr b ??? places in array!
+    @State private var places = [Place]()
     var body: some View {
         Map(
             coordinateRegion: $region,
@@ -53,19 +53,16 @@ struct ContentView: View {
         }
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-
 struct Place: Identifiable {
     let id = UUID()
     let annotation: MKPointAnnotation
     let mapItem: MKMapItem
 }
-
 struct Marker: View {
     var mapItem: MKMapItem
     var body: some View {
